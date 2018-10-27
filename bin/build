@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+docker login
+
+docker build -t php-hot-lunch .
+
+docker tag php-hot-lunch trourke/php-hot-lunch
+
+docker push trourke/php-hot-lunch
