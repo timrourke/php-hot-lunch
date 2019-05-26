@@ -8,7 +8,8 @@ RUN sudo apt-get install -y \
 
 RUN printf "\n" | sudo pecl install \
     ast \
-    memcached-3.0.4
+    memcached-3.0.4 \
+    redis
 
 RUN sudo docker-php-ext-install \
     mysqli \
@@ -18,4 +19,5 @@ RUN sudo docker-php-ext-install \
 RUN sudo docker-php-ext-enable \
     ast \
     memcached \
-    pdo_mysql
+    pdo_mysql \
+    redis
