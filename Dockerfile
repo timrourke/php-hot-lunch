@@ -1,4 +1,4 @@
-FROM circleci/php:7.2-browsers
+FROM circleci/php:7.3-browsers
 
 RUN sudo apt-get update
 
@@ -9,7 +9,7 @@ RUN sudo apt-get install -y \
 
 RUN printf "\n" | sudo pecl install \
     ast \
-    memcached-3.0.4 \
+    memcached \
     redis
 
 RUN sudo docker-php-ext-install \
