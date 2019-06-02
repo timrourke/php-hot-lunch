@@ -4,12 +4,10 @@ RUN sudo apt-get update
 
 RUN sudo apt-get install -y \
     libgmp-dev \
-    libmemcached-dev \
     zlib1g-dev
 
 RUN printf "\n" | sudo pecl install \
     ast \
-    memcached \
     redis
 
 RUN sudo docker-php-ext-install \
@@ -20,7 +18,6 @@ RUN sudo docker-php-ext-install \
 
 RUN sudo docker-php-ext-enable \
     ast \
-    memcached \
     pdo_mysql \
     redis
 
